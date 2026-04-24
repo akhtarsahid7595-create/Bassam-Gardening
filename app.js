@@ -197,13 +197,123 @@
   });
 })();
 
-// ─── TESTIMONIAL AUTO-SCROLL ──────────────────────
+// ─── TESTIMONIAL SLIDER ──────────────────────────
 (function initTestimonialScroll() {
-  const track = document.querySelector('.testimonial-track');
-  if (!track) return;
+  const track = document.getElementById('testimonialTrack');
+  const dotsContainer = document.getElementById('sliderDots');
+  if (!track || !dotsContainer) return;
 
-  // 2-col on desktop is fine — just enable card hover lift via CSS
-  // For mobile single-col, no carousel needed
+  const cards = track.querySelectorAll('.testimonial-card');
+  
+  // Create dots
+  cards.forEach((_, i) => {
+    const dot = document.createElement('div');
+    dot.classList.add('slider-dot');
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => {
+      track.scrollTo({
+        left: cards[i].offsetLeft - track.offsetLeft,
+        behavior: 'smooth'
+      });
+    });
+    dotsContainer.appendChild(dot);
+  });
+
+  // Update active dot on scroll
+  track.addEventListener('scroll', () => {
+    const scrollPos = track.scrollLeft;
+    const cardWidth = cards[0].offsetWidth + 16; // 16 is gap
+    const activeIndex = Math.round(scrollPos / cardWidth);
+    
+    dotsContainer.querySelectorAll('.slider-dot').forEach((dot, i) => {
+      dot.classList.toggle('active', i === activeIndex);
+    });
+  }, { passive: true });
+})();
+
+// ─── WHY US SLIDER ───────────────────────────────
+(function initWhySlider() {
+  const track = document.getElementById('whyTrack');
+  const dotsContainer = document.getElementById('whyDots');
+  if (!track || !dotsContainer) return;
+
+  const cards = track.querySelectorAll('.why-card');
+  let currentIndex = 0;
+  let autoPlayInterval;
+
+  // Create dots
+  cards.forEach((_, i) => {
+    const dot = document.createElement('div');
+    dot.classList.add('slider-dot');
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => {
+      stopAutoPlay();
+      scrollToIndex(i);
+      startAutoPlay();
+    });
+    dotsContainer.appendChild(dot);
+  });
+
+  function scrollToIndex(index) {
+    const cardWidth = cards[0].offsetWidth + parseInt(window.getComputedStyle(track).gap);
+    track.scrollTo({
+      left: index * cardWidth,
+      behavior: 'smooth'
+    });
+    currentIndex = index;
+  }
+
+  function startAutoPlay() {
+    autoPlayInterval = setInterval(() => {
+      currentIndex = (currentIndex + 1) % cards.length;
+      scrollToIndex(currentIndex);
+    }, 6000); // 6 seconds for "slow" transition
+  }
+
+  function stopAutoPlay() {
+    clearInterval(autoPlayInterval);
+  }
+
+  // Update dots on scroll
+  track.addEventListener('scroll', () => {
+    const scrollPos = track.scrollLeft;
+    const cardWidth = cards[0].offsetWidth + parseInt(window.getComputedStyle(track).gap);
+    const activeIndex = Math.round(scrollPos / cardWidth);
+    
+    dotsContainer.querySelectorAll('.slider-dot').forEach((dot, i) => {
+      dot.classList.toggle('active', i === activeIndex);
+    });
+    currentIndex = activeIndex;
+  }, { passive: true });
+
+  // Interaction handlers
+  track.addEventListener('mouseenter', stopAutoPlay);
+  track.addEventListener('mouseleave', startAutoPlay);
+  track.addEventListener('touchstart', stopAutoPlay, { passive: true });
+  track.addEventListener('touchend', startAutoPlay);
+
+  startAutoPlay();
+})();
+
+// ─── VIEW ALL SERVICES TOGGLE ──────────────────────
+(function initServicesToggle() {
+  const btn = document.getElementById('viewAllServices');
+  const extraCards = document.querySelectorAll('.service-card--extra');
+  if (!btn) return;
+
+  btn.addEventListener('click', () => {
+    const isShowing = btn.textContent.toLowerCase().includes('less');
+    
+    extraCards.forEach(card => {
+      card.classList.toggle('show', !isShowing);
+    });
+
+    btn.textContent = isShowing ? 'View All Services' : 'Show Less Services';
+    
+    if (isShowing) {
+      document.getElementById('services').scrollIntoView({ behavior: 'smooth' });
+    }
+  });
 })();
 
 // ─── STATS COUNT-UP ANIMATION ─────────────────────
@@ -240,24 +350,6 @@
   stats.forEach(el => observer.observe(el));
 })();
 
-// ─── PAGE LOAD ANIMATION ──────────────────────────
-(function initLoadAnim() {
-  // Add a brief fade-in on first load
-  document.body.style.opacity = '0';
-  document.body.style.transition = 'opacity 0.5s ease';
-
-  window.addEventListener('load', () => {
-    requestAnimationFrame(() => {
-      document.body.style.opacity = '1';
-    });
-  });
-
-  // Fallback if load fires before script
-  if (document.readyState === 'complete') {
-    document.body.style.opacity = '1';
-  }
-})();
-
 // ─── ACTIVE NAV LINK HIGHLIGHT ───────────────────
 (function initActiveNav() {
   const sections = document.querySelectorAll('section[id]');
@@ -267,14 +359,9 @@
     (entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          navLinks.forEach(link => {
-            link.style.color = '';
-            link.style.fontWeight = '';
-          });
+          navLinks.forEach(link => link.classList.remove('active'));
           const active = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
-          if (active) {
-            active.style.color = 'var(--white)';
-          }
+          if (active) active.classList.add('active');
         }
       });
     },

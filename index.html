@@ -156,7 +156,7 @@
         <p class="section-sub">Every service is an expression of our commitment to craftsmanship, precision, and the art of outdoor design.</p>
       </div>
 
-      <div class="services-grid">
+      <div class="services-grid" id="servicesGrid">
         <div class="service-card reveal-up" style="--delay:0.05s" tabindex="0">
           <div class="service-image-wrap">
             <img src="images/service-design.png" alt="IDesign Landscape Design Dar es Salaam" loading="lazy" />
@@ -197,7 +197,7 @@
           </div>
         </div>
 
-        <div class="service-card reveal-up" style="--delay:0.25s" tabindex="0">
+        <div class="service-card service-card--extra reveal-up" style="--delay:0.25s" tabindex="0">
           <div class="service-image-wrap">
             <img src="images/service-rooftop.png" alt="Rooftop Garden Design Dar es Salaam" loading="lazy" />
           </div>
@@ -207,7 +207,7 @@
           </div>
         </div>
 
-        <div class="service-card reveal-up" style="--delay:0.3s" tabindex="0">
+        <div class="service-card service-card--extra reveal-up" style="--delay:0.3s" tabindex="0">
           <div class="service-image-wrap">
             <img src="images/service-hardscape.png" alt="Hardscape and Pathways Tanzania" loading="lazy" />
           </div>
@@ -217,7 +217,7 @@
           </div>
         </div>
 
-        <div class="service-card reveal-up" style="--delay:0.35s" tabindex="0">
+        <div class="service-card service-card--extra reveal-up" style="--delay:0.35s" tabindex="0">
           <div class="service-image-wrap">
             <img src="images/service-commercial.png" alt="Commercial Landscaping Dar es Salaam" loading="lazy" />
           </div>
@@ -227,7 +227,7 @@
           </div>
         </div>
 
-        <div class="service-card reveal-up" style="--delay:0.4s" tabindex="0">
+        <div class="service-card service-card--extra reveal-up" style="--delay:0.4s" tabindex="0">
           <div class="service-image-wrap">
             <img src="images/service-maintenance.png" alt="Garden Maintenance Tanzania" loading="lazy" />
           </div>
@@ -236,6 +236,9 @@
             <p class="service-text">Ongoing garden maintenance programmes — from regular mowing and trimming to seasonal planting and irrigation system servicing.</p>
           </div>
         </div>
+      </div>
+      <div class="services-footer reveal-up">
+        <button id="viewAllServices" class="btn btn-outline btn-md">View All Services</button>
       </div>
     </div>
   </section>
@@ -254,27 +257,30 @@
         <h2 class="section-title light">Crafted With Intention,<br /><em>Delivered With Excellence.</em></h2>
       </div>
 
-      <div class="why-grid">
-        <div class="why-card reveal-up" style="--delay:0.1s">
-          <div class="why-num">01</div>
-          <h3 class="why-title">Unmatched Professionalism</h3>
-          <p class="why-text">Our team approaches every project with architectural rigour — detailed planning, precise execution, and impeccable standards from start to finish.</p>
+      <div class="why-slider reveal-up">
+        <div class="why-track" id="whyTrack">
+          <div class="why-card">
+            <div class="why-num">01</div>
+            <h3 class="why-title">Unmatched Professionalism</h3>
+            <p class="why-text">Our team approaches every project with architectural rigour — detailed planning, precise execution, and impeccable standards from start to finish.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-num">02</div>
+            <h3 class="why-title">Punctual Delivery</h3>
+            <p class="why-text">We respect your timeline. Our project management framework ensures on-schedule delivery without compromising quality or craftsmanship.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-num">03</div>
+            <h3 class="why-title">Tailored Solutions</h3>
+            <p class="why-text">No two projects are alike. Every landscape we design is custom-engineered to your specific space, climate microzone, and aesthetic vision.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-num">04</div>
+            <h3 class="why-title">Long-term Value</h3>
+            <p class="why-text">Beautiful landscapes appreciate. We design with longevity in mind — selecting species and materials that thrive in East Africa's conditions for years to come.</p>
+          </div>
         </div>
-        <div class="why-card reveal-up" style="--delay:0.2s">
-          <div class="why-num">02</div>
-          <h3 class="why-title">Punctual Delivery</h3>
-          <p class="why-text">We respect your timeline. Our project management framework ensures on-schedule delivery without compromising quality or craftsmanship.</p>
-        </div>
-        <div class="why-card reveal-up" style="--delay:0.3s">
-          <div class="why-num">03</div>
-          <h3 class="why-title">Tailored Solutions</h3>
-          <p class="why-text">No two projects are alike. Every landscape we design is custom-engineered to your specific space, climate microzone, and aesthetic vision.</p>
-        </div>
-        <div class="why-card reveal-up" style="--delay:0.4s">
-          <div class="why-num">04</div>
-          <h3 class="why-title">Long-term Value</h3>
-          <p class="why-text">Beautiful landscapes appreciate. We design with longevity in mind — selecting species and materials that thrive in East Africa's conditions for years to come.</p>
-        </div>
+        <div class="slider-dots" id="whyDots"></div>
       </div>
     </div>
   </section>
@@ -381,14 +387,46 @@
 
         <div class="portfolio-item reveal-up" data-category="commercial" style="--delay:0.3s">
           <div class="portfolio-img-wrap">
-            <img src="images/garden_install.png" alt="Commercial garden installation - Dar es Salaam" loading="lazy" />
+            <img src="images/portfolio-corporate.png" alt="Arusha Corporate Park landscape design - Tanzania" loading="lazy" />
             <div class="portfolio-overlay">
               <div class="portfolio-info">
                 <span class="portfolio-cat">Commercial</span>
-                <h3 class="portfolio-name">Corporate Headquarters Garden</h3>
-                <p class="portfolio-loc">CBD, Dar es Salaam</p>
+                <h3 class="portfolio-name">Arusha Corporate Park</h3>
+                <p class="portfolio-loc">Arusha, Tanzania</p>
               </div>
-              <button class="portfolio-expand" aria-label="View Corporate Garden project">
+              <button class="portfolio-expand" aria-label="View Arusha Corporate Park project">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item reveal-up" data-category="residential" style="--delay:0.35s">
+          <div class="portfolio-img-wrap">
+            <img src="images/portfolio-lighting.png" alt="Luxury garden lighting design at night - Masaki, Dar es Salaam" loading="lazy" />
+            <div class="portfolio-overlay">
+              <div class="portfolio-info">
+                <span class="portfolio-cat">Residential</span>
+                <h3 class="portfolio-name">Nightscape Accent Lighting</h3>
+                <p class="portfolio-loc">Masaki, Dar es Salaam</p>
+              </div>
+              <button class="portfolio-expand" aria-label="View Nightscape Lighting project">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item large reveal-up" data-category="courtyard" style="--delay:0.4s">
+          <div class="portfolio-img-wrap">
+            <img src="images/portfolio-zen.png" alt="Zen minimalist courtyard garden design - Mikocheni, Dar es Salaam" loading="lazy" />
+            <div class="portfolio-overlay">
+              <div class="portfolio-info">
+                <span class="portfolio-cat">Courtyard</span>
+                <h3 class="portfolio-name">Zen Minimalist Courtyard</h3>
+                <p class="portfolio-loc">Mikocheni, Dar es Salaam</p>
+              </div>
+              <button class="portfolio-expand" aria-label="View Zen Courtyard project">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
               </button>
             </div>
@@ -430,54 +468,57 @@
         <h2 class="section-title">Trusted by<br />Tanzania's Finest</h2>
       </div>
 
-      <div class="testimonial-track reveal-up">
-        <div class="testimonial-card">
-          <div class="t-stars" aria-label="5 stars">★★★★★</div>
-          <blockquote class="t-quote">"A place to feel at home — good products, services, and customer care. Absolutely superb. IDesign transformed our garden beyond what we imagined possible."</blockquote>
-          <div class="t-author">
-            <div class="t-avatar" aria-hidden="true">F</div>
-            <div>
-              <div class="t-name">Fatuma Juma</div>
-              <div class="t-role">Homeowner · Masaki, Dar es Salaam</div>
+      <div class="testimonial-slider reveal-up">
+        <div class="testimonial-track" id="testimonialTrack">
+          <div class="testimonial-card">
+            <div class="t-stars" aria-label="5 stars">★★★★★</div>
+            <blockquote class="t-quote">"A place to feel at home — good products, services, and customer care. Absolutely superb. IDesign transformed our garden beyond what we imagined possible."</blockquote>
+            <div class="t-author">
+              <div class="t-avatar" aria-hidden="true">F</div>
+              <div>
+                <div class="t-name">Fatuma Juma</div>
+                <div class="t-role">Homeowner · Masaki, Dar es Salaam</div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="testimonial-card">
-          <div class="t-stars" aria-label="5 stars">★★★★★</div>
-          <blockquote class="t-quote">"Pure professionalism from day one. The team at IDesign arrived on schedule, communicated clearly at every step, and delivered exactly what was promised — actually better."</blockquote>
-          <div class="t-author">
-            <div class="t-avatar" aria-hidden="true">J</div>
-            <div>
-              <div class="t-name">Juma Nassor</div>
-              <div class="t-role">Villa Owner · Oyster Bay, Dar es Salaam</div>
+          <div class="testimonial-card">
+            <div class="t-stars" aria-label="5 stars">★★★★★</div>
+            <blockquote class="t-quote">"Pure professionalism from day one. The team at IDesign arrived on schedule, communicated clearly at every step, and delivered exactly what was promised — actually better."</blockquote>
+            <div class="t-author">
+              <div class="t-avatar" aria-hidden="true">J</div>
+              <div>
+                <div class="t-name">Juma Nassor</div>
+                <div class="t-role">Villa Owner · Oyster Bay, Dar es Salaam</div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="testimonial-card">
-          <div class="t-stars" aria-label="5 stars">★★★★★</div>
-          <blockquote class="t-quote">"Responsiveness, punctuality, quality, and real value. I didn't think a landscaping company in Dar es Salaam could operate at this level. IDesign has set an entirely new standard."</blockquote>
-          <div class="t-author">
-            <div class="t-avatar" aria-hidden="true">S</div>
-            <div>
-              <div class="t-name">Salma Hamisi</div>
-              <div class="t-role">Hotel Director · Mikocheni, Dar es Salaam</div>
+          <div class="testimonial-card">
+            <div class="t-stars" aria-label="5 stars">★★★★★</div>
+            <blockquote class="t-quote">"Responsiveness, punctuality, quality, and real value. I didn't think a landscaping company in Dar es Salaam could operate at this level. IDesign has set an entirely new standard."</blockquote>
+            <div class="t-author">
+              <div class="t-avatar" aria-hidden="true">S</div>
+              <div>
+                <div class="t-name">Salma Hamisi</div>
+                <div class="t-role">Hotel Director · Mikocheni, Dar es Salaam</div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="testimonial-card">
-          <div class="t-stars" aria-label="5 stars">★★★★★</div>
-          <blockquote class="t-quote">"Our rooftop was a dead space. IDesign turned it into the most-loved part of our building — a lush garden terrace that our guests constantly compliment."</blockquote>
-          <div class="t-author">
-            <div class="t-avatar" aria-hidden="true">R</div>
-            <div>
-              <div class="t-name">Rehema Ali</div>
-              <div class="t-role">Property Developer · Kinondoni, Dar es Salaam</div>
+          <div class="testimonial-card">
+            <div class="t-stars" aria-label="5 stars">★★★★★</div>
+            <blockquote class="t-quote">"Our rooftop was a dead space. IDesign turned it into the most-loved part of our building — a lush garden terrace that our guests constantly compliment."</blockquote>
+            <div class="t-author">
+              <div class="t-avatar" aria-hidden="true">R</div>
+              <div>
+                <div class="t-name">Rehema Ali</div>
+                <div class="t-role">Property Developer · Kinondoni, Dar es Salaam</div>
+              </div>
             </div>
           </div>
         </div>
+        <div class="slider-dots" id="sliderDots"></div>
       </div>
     </div>
   </section>
@@ -544,52 +585,6 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════════════
-       LOCAL RELEVANCE / SERVICE AREA
-  ═══════════════════════════════════════════════════ -->
-  <section class="section local" aria-label="Service Areas in Tanzania">
-    <div class="local-split">
-      <div class="local-img reveal-left">
-        <img src="images/pathway_lighting.png" alt="Premium garden design in Dar es Salaam Tanzania" loading="lazy" />
-        <div class="local-img-overlay"></div>
-      </div>
-      <div class="local-content reveal-right">
-        <div class="section-label">Where We Work</div>
-        <h2 class="section-title">Serving Dar es Salaam<br /><em>&amp; All of Tanzania</em></h2>
-        <p class="local-text">
-          Whether you're transforming a private home in Masaki, designing the grounds of a hospitality property in Oyster Bay, or bringing a rooftop to life in the heart of Kinondoni — IDesign Landscape operates at every scale and in every context Tanzania demands.
-        </p>
-        <div class="local-tags">
-          <span class="local-tag">Masaki</span>
-          <span class="local-tag">Oyster Bay</span>
-          <span class="local-tag">Mikocheni</span>
-          <span class="local-tag">Kinondoni</span>
-          <span class="local-tag">Mbezi Beach</span>
-          <span class="local-tag">Upanga</span>
-          <span class="local-tag">Kariakoo</span>
-          <span class="local-tag">All Tanzania</span>
-        </div>
-        <div class="local-types">
-          <div class="type-item">
-            <span class="type-dot"></span>
-            <span>Private Residences &amp; Villas</span>
-          </div>
-          <div class="type-item">
-            <span class="type-dot"></span>
-            <span>Hotels &amp; Hospitality Venues</span>
-          </div>
-          <div class="type-item">
-            <span class="type-dot"></span>
-            <span>Commercial &amp; Corporate Spaces</span>
-          </div>
-          <div class="type-item">
-            <span class="type-dot"></span>
-            <span>Rooftop &amp; Courtyard Spaces</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- ═══════════════════════════════════════════════════
        CONTACT SECTION
@@ -704,7 +699,7 @@
 
     <div class="footer-bottom">
       <div class="container">
-        <p class="footer-copy">© 2024 IDesign Landscape · All Rights Reserved · Dar es Salaam, Tanzania</p>
+        <p class="footer-copy">© 2026 IDesign Landscape · All Rights Reserved · Dar es Salaam, Tanzania</p>
         <p class="footer-credit">Premium Landscaping &amp; Outdoor Design</p>
       </div>
     </div>
