@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bassam Gardening Lawn Care Services</title>
+  <meta name="description" content="Professional lawn care and garden maintenance across West Auckland and surrounding areas." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="#top" aria-label="Bassam Gardening home">BASSAM <span>GARDENING</span></a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#about">ABOUT</a><a href="#services">SERVICES</a><a href="#why-us">WHY US</a>
+      <a href="#reviews">REVIEWS</a><a href="#contact">CONTACT</a>
+    </nav>
+    <button class="menu-button" aria-label="Open menu"><span></span><span></span></button>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">WEST AUCKLAND LAWN CARE</p>
+        <h1>Fresh lawns.<br /><em>Better gardens.</em></h1>
+        <p class="hero-copy">Reliable lawn care and garden maintenance, shaped around your home and your schedule.</p>
+        <a class="button button-light" href="#contact">GET A FREE QUOTE</a>
+      </div>
+      <div class="hero-image image-image"></div>
+    </section>
+
+    <section class="intro section-cream" id="about">
+      <div class="leaf-mark">✳</div>
+      <div class="intro-title"><p class="eyebrow">A LITTLE MORE</p><h2>MAKING YOUR<br />OUTDOORS<br /><em>LOOK ITS BEST</em></h2></div>
+      <div class="intro-copy"><p>Bassam Gardening Lawn Care Services is here to make your garden look fresh, tidy and cared for. We bring a thoughtful, hands-on approach to every lawn, hedge and garden bed.</p><p>From regular mowing to seasonal clean-ups, we keep things simple, dependable and easy to arrange.</p></div>
+    </section>
+
+    <section class="split-section dark" id="services">
+      <div class="split-image services-image"></div>
+      <div class="split-copy"><p class="eyebrow">WHAT WE DO</p><h2>LAWN CARE<br /><em>MADE SIMPLE</em></h2><p>Professional garden care that keeps your outdoor space looking its best, without taking time away from your day.</p><a class="button button-outline" href="#contact">VIEW SERVICES</a></div>
+    </section>
+
+    <section class="project-banner"><div class="project-button">OUR SERVICES</div></section>
+
+    <section class="split-section approach" id="why-us">
+      <div class="split-copy"><p class="eyebrow">WHY CHOOSE US</p><h2>CARE THAT<br /><em>SHOWS</em></h2><p>Affordable pricing, friendly service and flexible scheduling. We serve West Auckland and surrounding areas with the same care we would give our own gardens.</p><a class="button button-dark" href="#contact">LEARN MORE</a></div>
+      <div class="split-image approach-image"></div>
+    </section>
+
+    <section class="reviews dark" id="reviews"><div class="review-inner"><p class="eyebrow">WHAT THEY SAY</p><h2>TESTIMONIALS</h2><div class="rule"></div><blockquote>“A reliable, friendly service that leaves our lawn looking fantastic every time.”<cite>— LOCAL HOMEOWNER, WEST AUCKLAND</cite></blockquote><blockquote>“Easy to book, great attention to detail and a really tidy finish.”<cite>— HAPPY CLIENT, HENDERSON</cite></blockquote><a class="button button-outline" href="#contact">BOOK YOUR SERVICE</a></div></section>
+
+    <section class="contact" id="contact"><div class="contact-copy"><p class="eyebrow">GET IN TOUCH</p><h2>FOR A FREE QUOTATION</h2><p>Message us today to book your lawn mowing or garden care service.</p><div class="contact-details"><a href="tel:+64204836326">+64 20 483 6326</a><a href="https://www.facebook.com/" target="_blank" rel="noreferrer">Facebook · Bassam Gardening</a></div></div><form class="quote-form"><label>Name<input type="text" placeholder="Your name" required /></label><label>Phone<input type="tel" placeholder="Your phone number" required /></label><label>Message<textarea placeholder="Tell us what you need help with" rows="5" required></textarea></label><button class="button button-dark" type="submit">SUBMIT</button></form></section>
+  </main>
+
+  <footer class="footer"><div><p class="footer-title">BASSAM GARDENING<br />LAWN CARE SERVICES</p><p>Reliable garden care across<br />West Auckland and surrounds.</p></div><div><p class="footer-title">CONTACT</p><a href="tel:+64204836326">+64 20 483 6326</a><a href="#contact">GET A FREE QUOTE</a></div><div><p class="footer-title">QUICK LINKS</p><a href="#about">ABOUT</a><a href="#services">SERVICES</a><a href="#why-us">WHY US</a><a href="#contact">CONTACT</a></div><div class="footer-badge">BG<br /><span>GARDEN CARE</span></div></footer>
+  <script>document.querySelector('.quote-form').addEventListener('submit', e => { e.preventDefault(); alert('Thanks — we will be in touch shortly.'); }); document.querySelector('.menu-button').addEventListener('click', () => document.querySelector('.desktop-nav').classList.toggle('open'));</script>
+</body>
+</html>
